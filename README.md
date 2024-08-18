@@ -16,7 +16,7 @@
 ## things I did in this repo
 
 
-- [ ]   Make it deploy (vercel)
+- [x]   Make it deploy (vercel)
 - [ ]	Scaffold basic ui with mock data
 - [ ]	Tidy up build process
 - [ ]	Actually set up a database (vercel postgres)
