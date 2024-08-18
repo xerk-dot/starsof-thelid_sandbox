@@ -38,13 +38,15 @@
 01) create scaffold
 
 pnpm create t3-app@latest
-git commit -m “init”
 
+02) commands
 
-02) run
-
+# run in development mode
 pnpm dev 
-
+# get database to match current schema
+pnpm run db:push
+# run drizzle studio to explore data (local.drizzle.studio)
+pnpm run db:push
 
 
 
