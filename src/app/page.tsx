@@ -1,5 +1,9 @@
 import Link from "next/link";
 import { db } from "~/server/db";
+
+//every time a change occurs in the database, the page will be re-rendered
+export const dynamic = "force-dynamic";
+
 const mockUrls = [
   "https://placehold.co/600x400/D00000/FFFFFF/png",
   "https://placehold.co/600x400/FF00FF/000000/png",
@@ -13,7 +17,6 @@ const mockImages = mockUrls.map((url, index)=> ({
 }));
 export default async function HomePage() {
   
-
   const posts = await db.query.posts.findMany();
   console.log(posts);
   
