@@ -1,4 +1,4 @@
-# sandbox
+# starsof-thelid-sandbox
 
 
 ## what tech is used?
@@ -28,8 +28,8 @@
 - [x]	Add image upload
 - [x]	"taint" (server-only); move queries to their own file
 - [x]	Use Next/Image component ( <Image\> ) [for high quality images catered to the device](https://vercel.com/docs/image-optimization/limits-and-pricing)
-- [ ]	Error management (w/ Sentry)
-- [ ]	Routing/image page (parallel route)
+- [x]	Error management (w/ Sentry)
+- [ ]	[Routing/image page (parallel route)](https://github.com/vercel/nextgram/)
 - [ ]	Update upload button to be less cringe
 - [ ]	Analytics (posthog)
 - [ ]	Delete button (w/ Server Actions)
