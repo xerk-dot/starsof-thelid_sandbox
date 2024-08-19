@@ -19,18 +19,17 @@ async function Images() {
         {/*[...images, ...images, ...images,]*/}
         {images.map((image) => (
           <div key={image.id} className="w-48 h-48 flex flex-col">
-
-            <Image 
-              src={image.url} 
-              alt={image.name} 
-              width={192}
-              height={192}
-              style={{ objectFit: "contain" }} />
-              
-            {/* w/o next image component
-            <img src={image.url} /> */}
-
-
+            <Link href={`/img/${image.id}`}>
+              <Image 
+                src={image.url} 
+                alt={image.name} 
+                width={192}
+                height={192}
+                style={{ objectFit: "contain" }} 
+              />
+            </Link>
+                          {/* w/o next image component
+              <img src={image.url} /> */}
             <div>{image.name}</div>
           </div>
         ))}
