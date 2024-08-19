@@ -54,7 +54,8 @@ pnpm run db:push
 # run drizzle studio to explore data (local.drizzle.studio)
 pnpm run db:push
 
-
+03) to use sentry:
+http://localhost:3000/sentry-example-page
 
 
 -->
