@@ -9,7 +9,10 @@
 - [Drizzle](https://orm.drizzle.team)
 - [Tailwind CSS](https://tailwindcss.com)
 - [tRPC](https://trpc.io)
-
+- [Sentry](https://sentry.io)
+- [Clerk](https://clerk.com)
+- [Vercel](https://vercel.com)
+- [uploadthing](https://uploadthing.com)
 
 
 ## things I did in this repo
