@@ -2,9 +2,8 @@
 
 
 ## what tech is used?
-- PostgreSQL
-- TS
-- Shadui
+- [PostgreSQL](https://www.postgresql.org/)
+- [Shadui](https://ui.shadcn.com/)
 - [Next.js](https://nextjs.org)
 - [NextAuth.js](https://next-auth.js.org)
 - [Drizzle](https://orm.drizzle.team)
@@ -24,8 +23,8 @@
 - [x]	Attach database to UI
 - [x]	Add authentication (w/ clerk)
 - [x]	Add image upload
-- [ ]	"taint" (server-only)
-- [ ]	Use Next/Image component
+- [x]	"taint" (server-only); move queries to their own file
+- [x]	Use Next/Image component ( <Image\> ) [for high quality images catered to the device](https://vercel.com/docs/image-optimization/limits-and-pricing)
 - [ ]	Error management (w/ Sentry)
 - [ ]	Routing/image page (parallel route)
 - [ ]	Update upload button to be less cringe
@@ -33,7 +32,10 @@
 - [ ]	Delete button (w/ Server Actions)
 - [ ]	Ratelimiting (upstash)
 
+## things to work on
 
+- [ ] use [imaginary for image uploads](https://github.com/h2non/imaginary)
+- [ ] use S3 instead of uploadthing
 <!-- 
 
 01) create scaffold
