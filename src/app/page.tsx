@@ -1,15 +1,14 @@
 import Link from "next/link";
 import { db } from "~/server/db";
 import { SignedOut, SignedIn } from "@clerk/nextjs";
+import { getMyImages } from "~/server/queries";
 //every time a change occurs in the database, the page will be re-rendered
 export const dynamic = "force-dynamic";
 
 
 async function Images() {
   
-  const images = await db.query.images.findMany({
-    orderBy: (model, {desc}) => desc(model.id),
-  });
+  const images = await getMyImages();
 
   return (
     <div className="flex flex-col gap-2">
