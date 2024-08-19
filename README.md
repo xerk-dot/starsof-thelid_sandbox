@@ -1,4 +1,4 @@
-# starsof-thelid-sandbox
+# starsof-thelid_sandbox
 
 
 ## what tech is used?
