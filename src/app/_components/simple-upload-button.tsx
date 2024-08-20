@@ -100,10 +100,6 @@ export function SimpleUploadButton() {
 
       router.refresh();
     },
-    onUploadError(error){
-        posthog.capture("upload_error", { error });
-        toast.dismiss("upload-begin");
-        toast.error("Upload failed");
   });
 
   return (
