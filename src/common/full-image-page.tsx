@@ -28,19 +28,7 @@ export async function FullPageImageView(props: { photoId: string }) {
           <div>{image.createdAt.toLocaleDateString()}</div>
         </div>
 
-        <div className="p-2">
-          <form
-            action={async () => {
-              "use server";
 
-              await deleteImage(idAsNumber);
-            }}
-          >
-            <Button type="submit" variant="destructive">
-              Delete
-            </Button>
-          </form>
-        </div>
       </div>
     </div>
   );

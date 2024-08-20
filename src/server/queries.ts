@@ -1,49 +1,54 @@
-//what is react taint?
-//  --> use it as a way to work with user data without returning it to the client
-
-
-// how do you get the data from the server?
-// 1) HTTP APIs (for existing large projects/orgs)
-// 2) Data Access Layer (for new projects)
-// 3) Component Level Data Access (ffor prototyping and learning)
-
-// what is server-only?
-// --> exposing an endpoint for the client to hit
-// pnpm add server-only
-
-// what is client-only?
-// --> ships java script to the client, still runs on the server
-
-
 import "server-only";
 import { db } from "./db";
 import { auth } from "@clerk/nextjs/server";
+import { images } from "./db/schema";
+import { and, eq } from "drizzle-orm";
+import { redirect } from "next/navigation";
+import analyticsServerClient from "./analytics";
 
 export async function getMyImages() {
+  const user = auth();
 
-    const user = auth();
-    if (!user.userId) throw new Error("Unauthorized");
+  if (!user.userId) throw new Error("Unauthorized");
 
-    // select all images for the user
-    const images = await db.query.images.findMany({
-        where: (model, { eq }) => eq(model.userId, user.userId),
-        orderBy: (model, {desc}) => desc(model.id),
-    });
-    return images;
+  const images = await db.query.images.findMany({
+    where: (model, { eq }) => eq(model.userId, user.userId),
+    orderBy: (model, { desc }) => desc(model.id),
+  });
+
+  return images;
 }
 
 export async function getImage(id: number) {
+  const user = auth();
+  if (!user.userId) throw new Error("Unauthorized");
 
-    const user = auth();
-    if (!user.userId) throw new Error("Unauthorized");
+  const image = await db.query.images.findFirst({
+    where: (model, { eq }) => eq(model.id, id),
+  });
+  
+  if (!image) throw new Error("Image not found");
 
-    const image = await db.query.images.findFirst({
-        where: (model, { eq }) => eq(model.id, id),
-    });
+  if (image.userId !== user.userId) throw new Error("Unauthorized");
 
-    if (!image) throw new Error("Image Not Found");
-    
-    if (image.userId !== user.userId) throw new Error("Unauthorized");
+  return image;
+}
 
-    return image;
+export async function deleteImage(id: number) {
+  const user = auth();
+  if (!user.userId) throw new Error("Unauthorized");
+
+  await db
+    .delete(images)
+    .where(and(eq(images.id, id), eq(images.userId, user.userId)));
+
+  analyticsServerClient.capture({
+    distinctId: user.userId,
+    event: "delete image",
+    properties: {
+      imageId: id,
+    },
+  });
+
+  redirect("/");
 }
