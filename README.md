@@ -62,3 +62,7 @@ http://localhost:3000/sentry-example-page
 pnpm dlx shadcn-ui@latest init
 npx shadcn-ui@latest add toast
 pnpm dlx shadcn-ui@latest add sonner
+
+05) to install ratelimit:
+pnpm install @upstash/ratelimit
+pnpm i @upstash/redis
