@@ -13,6 +13,9 @@
 - [Clerk](https://clerk.com)
 - [Vercel](https://vercel.com)
 - [uploadthing](https://uploadthing.com)
+- [Posthog](https://posthog.com)
+- [Upstash](https://upstash.com)
+- [Imaginary](https://imaginary.org)
 
 
 ## things I did in this repo
@@ -41,7 +44,8 @@
 - [ ] use S3 instead of uploadthing
 - [ ] infinite scroll
 - [ ] select images on gallery page (state management) (zustand)
-- [ ] 
+- [ ] migrate from vercel postgres to aws
+- [ ] explore aws amplify and see if viable for this project
 <!-- 
 
 01) create scaffold
