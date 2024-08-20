@@ -7,7 +7,7 @@ await import("./src/env.js");
 /** @type {import("next").NextConfig} */
 const coreConfig = {
   images: {
-    remotePatterns: [{ hostname: "utfs.io" }],
+    remotePatterns: [{ hostname: "utfs.io" }], //for uploadthing
   },
   typescript: {
     ignoreBuildErrors: true,
@@ -16,7 +16,7 @@ const coreConfig = {
     ignoreDuringBuilds: true,
   },
 
-  async rewrites() {
+  async rewrites() { //for posthog
     return [
       {
         source: "/ingest/static/:path*",
