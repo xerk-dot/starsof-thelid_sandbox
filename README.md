@@ -59,4 +59,5 @@ http://localhost:3000/sentry-example-page
 
 
 04) to install shadui:
+pnpm dlx shadcn-ui@latest init
 npx shadcn-ui@latest add toast
