@@ -32,13 +32,16 @@
 - [x]	[Routing/image page (parallel route)](https://github.com/vercel/nextgram/)
 - [x]	Update upload button to be less cringe
 - [x]	Analytics (posthog)
-- [ ]	Delete button (w/ Server Actions)
-- [ ]	Ratelimiting (upstash)
+- [x]	Delete button (w/ Server Actions)
+- [x]	Ratelimiting (upstash)
 
 ## things to work on
 
 - [ ] use [imaginary for image uploads](https://github.com/h2non/imaginary)
 - [ ] use S3 instead of uploadthing
+- [ ] infinite scroll
+- [ ] select images on gallery page (state management) (zustand)
+- [ ] 
 <!-- 
 
 01) create scaffold
