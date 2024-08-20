@@ -29,8 +29,8 @@
 - [x]	"taint" (server-only); move queries to their own file
 - [x]	Use Next/Image component ( <Image\> ) [for high quality images catered to the device](https://vercel.com/docs/image-optimization/limits-and-pricing)
 - [x]	Error management (w/ Sentry)
-- [ ]	[Routing/image page (parallel route)](https://github.com/vercel/nextgram/)
-- [ ]	Update upload button to be less cringe
+- [x]	[Routing/image page (parallel route)](https://github.com/vercel/nextgram/)
+- [x]	Update upload button to be less cringe
 - [ ]	Analytics (posthog)
 - [ ]	Delete button (w/ Server Actions)
 - [ ]	Ratelimiting (upstash)
@@ -58,4 +58,5 @@ pnpm run db:push
 http://localhost:3000/sentry-example-page
 
 
--->
+04) to install shadui:
+npx shadcn-ui@latest add toast
