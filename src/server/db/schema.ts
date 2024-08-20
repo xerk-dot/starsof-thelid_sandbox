@@ -26,6 +26,14 @@ import {
  */ 
 export const createTable = pgTableCreator((name) => `starsof-thelid_sandbox_${name}`);
 
+
+/**
+ * 
+ * to clear the table:
+ * TRUNCATE TABLE "starsof-thelid_sandbox_image" RESTART IDENTITY;
+ * 
+ */
+
 export const images = createTable(
   "image",
   {
