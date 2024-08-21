@@ -21,17 +21,17 @@ export const ourFileRouter = {
       // If you throw, the user will not be able to upload
       if (!user.userId) throw new UploadThingError("Unauthorized");
 
-      const fullUserData = await clerkClient.users.getUser(user.userId);
+      //const fullUserData = await clerkClient.users.getUser(user.userId);
 
-      if (fullUserData?.privateMetadata?.["can-upload"] !== true)
-        throw new UploadThingError("User Does Not Have Upload Permissions");
-
+      //if (fullUserData?.privateMetadata?.["can-upload"] !== true)
+        //throw new UploadThingError("User Does Not Have Upload Permissions");
 
       const { success } = await ratelimit.limit(user.userId);
 
       if (!success) throw new UploadThingError("Rate limit exceeded");
       // Whatever is returned here is accessible in onUploadComplete as `metadata`
       return { userId: user.userId };
+      
     })
     .onUploadComplete(async ({ metadata, file }) => {
       // This code RUNS ON YOUR SERVER after upload
