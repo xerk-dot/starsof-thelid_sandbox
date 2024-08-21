@@ -1,13 +1,16 @@
 import { clerkClient } from "@clerk/nextjs/server";
 import { Button } from "~/components/ui/button";
-import { deleteImage, getImage } from "~/server/queries";
+import { deleteImage, getImage, findImage } from "~/server/queries";
 
 export async function FullPageImageView(props: { photoId: string }) {
   const idAsNumber = Number(props.photoId);
   if (Number.isNaN(idAsNumber)) throw new Error("Invalid photo id");
 
-  const image = await getImage(idAsNumber);
+  const res = await findImage(idAsNumber);
+  if (res.status === 404) return <div>Not found</div>;
 
+  const image = await getImage(idAsNumber);
+  
   const userInfo = await clerkClient.users.getUser(image.userId);
 
   return (

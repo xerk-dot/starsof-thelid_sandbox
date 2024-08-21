@@ -6,6 +6,19 @@ import { and, eq } from "drizzle-orm";
 import { redirect } from "next/navigation";
 import analyticsServerClient from "./analytics";
 
+export async function findImage(id: number) {
+  const user = auth();
+  if (!user.userId) throw new Error("Unauthorized");
+
+  const image = await db.query.images.findFirst({
+    where: (model, { eq }) => eq(model.id, id),
+  });
+  
+  if (!image) return { status: 404 };
+  else return { status: 200};
+}
+
+
 export async function getMyImages() {
   const user = auth();
 
