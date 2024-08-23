@@ -16,7 +16,7 @@
 - [Posthog](https://posthog.com)
 - [Upstash](https://upstash.com)
 - [Imaginary](https://imaginary.org)
-
+- [Firestore](firestore)
 
 ## things I did in this repo
 
@@ -37,7 +37,7 @@
 - [x]	Analytics (posthog)
 - [x]	Delete button (w/ Server Actions)
 - [x]	Ratelimiting (upstash)
-
+- [ ]   Add GCP firestore (nosql) for storing event coordinates
 ## things to work on
 
 - [ ] use [imaginary for image uploads](https://github.com/h2non/imaginary)
