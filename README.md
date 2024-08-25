@@ -37,7 +37,7 @@
 - [x]	Analytics (posthog)
 - [x]	Delete button (w/ Server Actions)
 - [x]	Ratelimiting (upstash)
-- [ ]   Add GCP firestore (nosql) for storing event coordinates
+- [X]   Add [GCP firestore (nosql)](https://cloud.google.com/nodejs/docs/reference/firestore/latest) for storing event coordinates. I use [Application Default Credentials](https://cloud.google.com/docs/authentication/provide-credentials-adc) to connect to the database.
 ## things to work on
 
 - [ ] use [imaginary for image uploads](https://github.com/h2non/imaginary)
