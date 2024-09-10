@@ -30,7 +30,14 @@ export async function FullPageImageView(props: { photoId: string }) {
           <div>Created On:</div>
           <div>{image.createdAt.toLocaleDateString()}</div>
         </div>
-
+        <div className="p-2">
+          <div>Location:</div>
+          <div>{image.createdAt.toLocaleDateString()}</div>
+        </div>
+        <div className="p-2">
+          <div>Created On:</div>
+          <div>{image.createdAt.toLocaleDateString()}</div>
+        </div>
 
       </div>
     </div>
