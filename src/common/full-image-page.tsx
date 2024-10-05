@@ -1,8 +1,8 @@
+
 import { clerkClient } from "@clerk/nextjs/server";
 import { Button } from "~/components/ui/button";
 import { deleteImage, getImage, findImage } from "~/server/queries";
 import Home from "src/app/_components/map.jsx"; // Import the Home component from map.jsx
-
 
 export async function FullPageImageView(props: { photoId: string }) {
   const idAsNumber = Number(props.photoId);
