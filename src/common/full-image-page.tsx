@@ -18,8 +18,9 @@ export async function FullPageImageView(props: { photoId: string }) {
   return (
     <div className="flex h-full w-screen min-w-0 items-center justify-center text-white">
       <div className="flex-shrink flex-grow">
-        {/* <img src={image.url} className="object-contain" alt={image.name} /> */}
-        <Home />
+        {/*<img src={image.url} className="object-contain" alt={image.name} />  */}
+        <div className="object-contain"> <Home /> </div>
+           
       </div>
       <div className="flex h-full w-56 flex-shrink-0 flex-col border-l">
         <div className="border-b p-2 text-center text-xl">{image.name}</div>
@@ -34,11 +35,11 @@ export async function FullPageImageView(props: { photoId: string }) {
           <div>{image.createdAt.toLocaleDateString()}</div>
         </div>
         <div className="p-2">
-          <div>Location:</div>
+          <div>Longitude:</div>
           <div>{image.createdAt.toLocaleDateString()}</div>
         </div>
         <div className="p-2">
-          <div>Created On:</div>
+          <div>Latitude:</div>
           <div>{image.createdAt.toLocaleDateString()}</div>
         </div>
 

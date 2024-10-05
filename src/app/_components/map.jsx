@@ -9,6 +9,7 @@ import "mapbox-gl/dist/mapbox-gl.css"; //This line is SO IMPORTANT lol
 
 import ImageControl from '@mapbox-controls/image';
 import '@mapbox-controls/image/src/index.css';
+import hidingWhite from '../_components/color.css'; //this is used when a marker is clicked on, so dont delete this import!
 
 const imageControl = new ImageControl();
 
@@ -28,6 +29,7 @@ const Home = () => {
     return (<div>Missing Mapbox Token</div>);
   }
   useEffect(() => {
+
     mapboxgl.accessToken = MAPBOX_TOKEN;
 
     mapRef.current = new mapboxgl.Map({
@@ -37,6 +39,18 @@ const Home = () => {
         [-128.99107, 22.62724],
         [-63.35107, 50.26125]
       ]
+    });
+
+
+    mapRef.current.on('style.load', function() {
+      mapRef.current.on('click', function(e) {
+        var coordinates = e.lngLat;
+        console.log(coordinates);
+        new mapboxgl.Popup()
+          .setLngLat(coordinates)
+          .setHTML('you clicked here: <br/>' + coordinates)
+          .addTo(mapRef.current);
+      });
     });
     mapRef.current.addControl(imageControl, 'top-right');
 
