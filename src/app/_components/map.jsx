@@ -62,7 +62,7 @@ const Home = () => {
 
   return (
     <>         
-      <div id="map" style={{ height: '100vh' }} ref={mapContainerRef}></div>
+      <div id="map" style={{ height: '85vh' }} ref={mapContainerRef}></div>
       
     </>
 );
